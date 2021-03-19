@@ -8,6 +8,12 @@
 gem specificinstall jubishop/%gem%
 ```
 
+or
+
+```ruby
+gem '%gem', github: 'jubishop/%gem%'
+```
+
 ## Usage
 
 TODO: Describe usage.
