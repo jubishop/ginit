@@ -2,5 +2,45 @@
 
 require 'fileutils'
 
-# Copy gitignore file
-FileUtils.cp('../assets/.gitignore', Dir.pwd)
+require 'colorize'
+
+assets_dir = File.join(File.dirname(__FILE__), '../assets')
+puts assets_dir
+
+print 'Copying .gitignore file...'
+FileUtils.cp(File.join(assets_dir, '.gitignore'), Dir.pwd)
+puts 'done.'
+
+print 'Copying .rspec file...'
+FileUtils.cp(File.join(assets_dir, '.rspec'), Dir.pwd)
+puts 'done.'
+
+print 'Copying Steepfile...'
+FileUtils.cp(File.join(assets_dir, 'Steepfile'), Dir.pwd)
+puts 'done.'
+
+puts 'What is the summary for this gem?'.bold
+print ': '
+summary = gets.strip
+
+contents = File.read(File.join(assets_dir, 'template.gemspec'))
+contents.gsub!('%gem%', File.basename(Dir.pwd))
+contents.gsub!('%summary%', summary)
+File.write(File.join(Dir.pwd, "#{File.basename(Dir.pwd)}.gemspec"), contents)
+puts 'gemspec installed...'
+
+contents = File.read(File.join(assets_dir, 'Gemfile'))
+contents.gsub!('%gem%', File.basename(Dir.pwd))
+File.write(File.join(Dir.pwd, 'Gemfile'), contents)
+puts 'Gemfile installed...'
+
+contents = File.read(File.join(assets_dir, 'README.md'))
+contents.gsub!('%gem%', File.basename(Dir.pwd))
+contents.gsub!('%summary%', summary)
+File.write(File.join(Dir.pwd, 'README.md'), contents)
+puts "README installed...#{'remember to add usage details'.red.bold}"
+
+contents = File.read(File.join(assets_dir, 'LICENSE.txt'))
+contents.gsub!('%year%', Time.now.year.to_s)
+File.write(File.join(Dir.pwd, 'LICENSE.txt'), contents)
+puts 'LICENSE.txt installed...'
