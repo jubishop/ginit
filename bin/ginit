@@ -7,12 +7,21 @@ require 'colorize'
 assets_dir = File.join(File.dirname(__FILE__), '../assets')
 puts assets_dir
 
-print 'Copying .gitignore file...'
+print 'Adding stub dirs'
+FileUtils.mkdir(%w[bin lib sig spec])
+puts 'done.'
+
+print 'Copying .gitignore...'
 FileUtils.cp(File.join(assets_dir, '.gitignore'), Dir.pwd)
 puts 'done.'
 
-print 'Copying .rspec file...'
+print 'Copying .rspec...'
 FileUtils.cp(File.join(assets_dir, '.rspec'), Dir.pwd)
+puts 'done.'
+
+print 'Copying spec/spec_helper.rb...'
+FileUtils.cp(File.join(assets_dir, 'spec_helper.rb'),
+             File.join(Dir.pwd, 'spec'))
 puts 'done.'
 
 print 'Copying Steepfile...'

@@ -10,7 +10,11 @@ gem specificinstall jubishop/ginit
 
 ## Usage
 
-```
+- Create a new empty git repo, such as `my-repo`.
+
+```zsh
+git clone https://github.com/jubishop/my-repo.git
+cd my-repo
 ginit
 ```
 
