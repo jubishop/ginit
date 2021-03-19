@@ -1,3 +1,6 @@
 #!/usr/bin/env ruby
 
-puts 'Hello world'
+require 'fileutils'
+
+# Copy gitignore file
+FileUtils.cp('../assets/.gitignore', Dir.pwd)
