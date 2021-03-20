@@ -4,7 +4,7 @@ files += Dir['lib/**/*']
 
 Gem::Specification.new do |spec|
   spec.name          = 'ginit'
-  spec.version       = '1.1'
+  spec.version       = '1.2'
   spec.summary       = 'Scaffolding for a new RubyGem'
   spec.authors       = ['Justin Bishop']
   spec.email         = ['jubishop@gmail.com']
