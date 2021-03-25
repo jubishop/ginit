@@ -4,14 +4,18 @@
 
 ## Installation
 
+This gem can be found at https://www.jubigems.org/gems/%gem%
+
+### Global installation
+
 ```zsh
-gem specificinstall jubishop/%gem%
+gem install %gem% --source https://www.jubigems.org/
 ```
 
-or
+### In a Gemfile
 
 ```ruby
-gem '%gem', github: 'jubishop/%gem%'
+gem '%gem', source: 'https://www.jubigems.org/'
 ```
 
 ## Usage

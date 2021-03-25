@@ -4,8 +4,18 @@ Installs opinionated scaffolding for a new Gem.
 
 ## Installation
 
+This gem can be found at https://www.jubigems.org/gems/ginit
+
+### Global installation
+
 ```zsh
-gem specificinstall jubishop/ginit
+gem install ginit --source https://www.jubigems.org/
+```
+
+### In a Gemfile
+
+```ruby
+gem 'ginit', source: 'https://www.jubigems.org/'
 ```
 
 ## Usage
