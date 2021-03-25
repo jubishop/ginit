@@ -4,8 +4,6 @@
 
 ## Installation
 
-This gem can be found at https://www.jubigems.org/gems/%gem%
-
 ### Global installation
 
 ```zsh
