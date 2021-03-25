@@ -27,6 +27,9 @@ print 'Copying Steepfile...'
 FileUtils.cp(File.join(assets_dir, 'Steepfile'), Dir.pwd)
 puts 'done.'
 
+puts 'Copying Rakefile...'
+FileUtils.cp(File.join(assets_dir, 'Rakefile'), Dir.pwd)
+
 puts 'What is the summary for this gem?'.bold
 print ': '
 summary = gets.strip
