@@ -4,7 +4,7 @@ files += Dir['lib/**/*']
 
 Gem::Specification.new do |spec|
   spec.name          = 'ginit'
-  spec.version       = '1.6'
+  spec.version       = '1.7'
   spec.summary       = 'Installs opinionated scaffolding for a new Gem.'
   spec.authors       = ['Justin Bishop']
   spec.email         = ['jubishop@gmail.com']
