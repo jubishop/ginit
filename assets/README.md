@@ -15,7 +15,7 @@ gem install %gem% --source https://www.jubigems.org/
 ### In a Gemfile
 
 ```ruby
-gem '%gem', source: 'https://www.jubigems.org/'
+gem '%gem%', source: 'https://www.jubigems.org/'
 ```
 
 ## Usage
