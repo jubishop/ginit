@@ -20,7 +20,7 @@ gem 'ginit', source: 'https://www.jubigems.org/'
 
 ## Usage
 
-- Create a new empty git repo, such as `my-repo`.
+- Create a new empty git repo, such as `my-repo`, then:
 
 ```zsh
 git clone https://github.com/jubishop/my-repo.git
