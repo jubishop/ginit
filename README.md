@@ -4,8 +4,6 @@ Installs opinionated scaffolding for a new Gem.
 
 ## Installation
 
-This gem can be found at https://www.jubigems.org/gems/ginit
-
 ```zsh
 gem install ginit --source https://www.jubigems.org/
 ```
