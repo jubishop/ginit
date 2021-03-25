@@ -6,16 +6,8 @@ Installs opinionated scaffolding for a new Gem.
 
 This gem can be found at https://www.jubigems.org/gems/ginit
 
-### Global installation
-
 ```zsh
 gem install ginit --source https://www.jubigems.org/
-```
-
-### In a Gemfile
-
-```ruby
-gem 'ginit', source: 'https://www.jubigems.org/'
 ```
 
 ## Usage

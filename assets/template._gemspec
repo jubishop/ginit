@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q(%summary%)
   spec.authors       = ['Justin Bishop']
   spec.email         = ['jubishop@gmail.com']
-  spec.homepage      = 'https://github.com/jubishop/%gem%'
+  spec.homepage      = 'https://www.jubigems.org/gems/%gem%'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 3.0')
   spec.files         = Dir['lib/**/*.rb']

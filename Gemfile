@@ -11,7 +11,9 @@ gem 'rubocop-rake'
 gem 'rubocop-rspec'
 gem 'steep'
 
-gem 'rakegem', github: 'jubishop/rakegem'
+source 'https://www.jubigems.org' do
+  gem 'rakegem'
+end
 
 # Specify your gem's dependencies in ginit.gemspec
 gemspec

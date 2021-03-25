@@ -32,7 +32,7 @@ puts 'What is the summary for this gem?'.bold
 print ': '
 summary = gets.strip
 
-contents = File.read(File.join(assets_dir, 'template.gemspec'))
+contents = File.read(File.join(assets_dir, 'template._gemspec'))
 contents.gsub!('%gem%', File.basename(Dir.pwd))
 contents.gsub!('%summary%', summary)
 File.write(File.join(Dir.pwd, "#{File.basename(Dir.pwd)}.gemspec"), contents)
