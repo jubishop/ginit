@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
   spec.email         = ['jubishop@gmail.com']
   spec.homepage      = 'https://github.com/jubishop/ginit'
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 3.0')
   spec.files         = files
   spec.require_paths = ['lib']
   spec.bindir        = 'bin'
@@ -19,5 +18,6 @@ Gem::Specification.new do |spec|
     'source_code_uri' => 'https://github.com/jubishop/ginit',
     'steep_types' => 'sig'
   }
+  spec.required_ruby_version = Gem::Requirement.new('>= 3.0')
   spec.add_runtime_dependency('colorize')
 end
