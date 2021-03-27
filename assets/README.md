@@ -4,6 +4,8 @@
 
 ## Installation
 
+[![RSpec Status](https://github.com/jubishop/%gem%/workflows/RSpec/badge.svg)](https://github.com/jubishop/%gem%/actions)  [![Rubocop Status](https://github.com/jubishop/%gem%/workflows/Rubocop/badge.svg)](https://github.com/jubishop/%gem%/actions)
+
 ### Global installation
 
 ```zsh

@@ -27,8 +27,22 @@ print 'Copying Steepfile...'
 FileUtils.cp(File.join(assets_dir, 'Steepfile'), Dir.pwd)
 puts 'done.'
 
-puts 'Copying Rakefile...'
+print 'Copying .rubocop.yml...'
+FileUtils.cp(File.join(assets_dir, '.rubocop.yml'), Dir.pwd)
+
+print 'Copying Rakefile...'
 FileUtils.cp(File.join(assets_dir, 'Rakefile'), Dir.pwd)
+puts 'done.'
+
+print 'Copying RSpec workflow...'
+FileUtils.cp(File.join(assets_dir, 'rspec.yml'),
+             File.join(Dir.pwd, '.github', 'workflows'))
+puts 'done.'
+
+print 'Copying Rubocop workflow...'
+FileUtils.cp(File.join(assets_dir, 'rubocop.yml'),
+             File.join(Dir.pwd, '.github', 'workflows'))
+puts 'done.'
 
 puts 'What is the summary for this gem?'.bold
 print ': '
