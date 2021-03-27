@@ -1,6 +1,6 @@
-files = Dir.glob('assets/**/*', File::FNM_DOTMATCH)
-files = files.reject { |d| d.end_with?('.') }
-files += Dir['lib/**/*']
+files = Dir.glob('assets/**/*', File::FNM_DOTMATCH).select { |path|
+  File.file?(path)
+}
 
 Gem::Specification.new do |spec|
   spec.name          = 'ginit'
