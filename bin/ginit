@@ -1,13 +1,14 @@
 #!/usr/bin/env ruby
 
-require 'fileutils'
-
 require 'colorize'
+require 'fileutils'
+require 'json'
+require 'rest-client'
 
 assets_dir = File.join(File.dirname(__FILE__), '../assets')
 
 print 'Adding stub dirs'
-FileUtils.mkdir(%w[bin lib sig spec])
+FileUtils.mkdir_p(%w[bin lib sig spec .github/workflows])
 puts 'done.'
 
 print 'Copying .gitignore...'
@@ -48,24 +49,34 @@ puts 'What is the summary for this gem?'.bold
 print ': '
 summary = gets.strip
 
+print 'Updating github repo with summary...'
+RestClient.patch("https://jubishop:#{ENV['GITHUB_TOKEN']}@" \
+                 "api.github.com/repos/jubishop/#{File.basename(Dir.pwd)}",
+                 { description: summary }.to_json)
+puts 'done.'
+
+print 'Installing gemspec...'
 contents = File.read(File.join(assets_dir, 'template._gemspec'))
 contents.gsub!('%gem%', File.basename(Dir.pwd))
 contents.gsub!('%summary%', summary)
 File.write(File.join(Dir.pwd, "#{File.basename(Dir.pwd)}.gemspec"), contents)
-puts 'gemspec installed...'
+puts 'done.'
 
+print 'Installing Gemfile...'
 contents = File.read(File.join(assets_dir, 'Gemfile'))
 contents.gsub!('%gem%', File.basename(Dir.pwd))
 File.write(File.join(Dir.pwd, 'Gemfile'), contents)
-puts 'Gemfile installed...'
+puts 'done.'
 
+print 'Installing README...'
 contents = File.read(File.join(assets_dir, 'README.md'))
 contents.gsub!('%gem%', File.basename(Dir.pwd))
 contents.gsub!('%summary%', summary)
 File.write(File.join(Dir.pwd, 'README.md'), contents)
-puts "README installed...#{'remember to add usage details'.red.bold}"
+puts "done.  #{'remember to add usage details'.red.bold}"
 
+print 'Installing LICENSE.txt...'
 contents = File.read(File.join(assets_dir, 'LICENSE.txt'))
 contents.gsub!('%year%', Time.now.year.to_s)
 File.write(File.join(Dir.pwd, 'LICENSE.txt'), contents)
-puts 'LICENSE.txt installed...'
+puts 'done.'
