@@ -50,7 +50,7 @@ print ': '
 summary = gets.strip
 
 print 'Updating github repo with summary...'
-RestClient.patch("https://jubishop:#{ENV['GITHUB_TOKEN']}@" \
+RestClient.patch("https://#{ENV['GITHUB_TOKEN']}@" \
                  "api.github.com/repos/jubishop/#{File.basename(Dir.pwd)}",
                  { description: summary }.to_json)
 puts 'done.'
