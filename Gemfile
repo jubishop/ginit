@@ -3,9 +3,11 @@ ruby '>= 3'
 source 'https://rubygems.org'
 
 gem 'json'
+gem 'rest-client'
+
+# defaults
 gem 'rake'
 gem 'rbs'
-gem 'rest-client'
 gem 'rspec'
 gem 'rubocop'
 gem 'rubocop-performance'
