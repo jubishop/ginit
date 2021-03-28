@@ -73,7 +73,7 @@ contents = File.read(File.join(assets_dir, 'README.md'))
 contents.gsub!('%gem%', File.basename(Dir.pwd))
 contents.gsub!('%summary%', summary)
 File.write(File.join(Dir.pwd, 'README.md'), contents)
-puts "done.  #{'remember to add usage details'.red.bold}"
+puts "done.  #{'Remember to add usage details'.red.bold}"
 
 print 'Installing LICENSE.txt...'
 contents = File.read(File.join(assets_dir, 'LICENSE.txt'))
