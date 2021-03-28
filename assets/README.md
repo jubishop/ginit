@@ -1,6 +1,6 @@
 # %gem%
 
-[![RSpec Status](https://github.com/jubishop/%gem%/workflows/RSpec/badge.svg)](https://github.com/jubishop/%gem%/actions)  [![Rubocop Status](https://github.com/jubishop/%gem%/workflows/Rubocop/badge.svg)](https://github.com/jubishop/%gem%/actions)
+[![RSpec Status](https://github.com/jubishop/%gem%/workflows/RSpec/badge.svg)](https://github.com/jubishop/%gem%/actions/workflows/rspec.yml)  [![Rubocop Status](https://github.com/jubishop/%gem%/workflows/Rubocop/badge.svg)](https://github.com/jubishop/%gem%/actions/workflows/rubocop.yml)
 
 %summary%
 
