@@ -1,6 +1,6 @@
 # Ginit
 
-[![Rubocop Status](workflows/Rubocop/badge.svg)](actions)
+[![Rubocop Status](/jubishop/ginit/workflows/Rubocop/badge.svg)](/jubishop/ginit/actions)
 
 Installs opinionated scaffolding for a new Gem.
 
