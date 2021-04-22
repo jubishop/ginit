@@ -13,6 +13,8 @@ RSpec.configure do |config|
 
   config.default_formatter = 'doc' if config.files_to_run.one?
 
+  config.alias_it_should_behave_like_to :it_has_behavior, 'has behavior:'
+
   config.order = :random
   Kernel.srand(config.seed)
 end
