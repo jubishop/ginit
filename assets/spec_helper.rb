@@ -8,13 +8,12 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  config.treat_symbols_as_metadata_keys_with_true_values = true
   config.shared_context_metadata_behavior = :apply_to_host_groups
   config.disable_monkey_patching!
 
   config.default_formatter = 'doc' if config.files_to_run.one?
 
-  config.alias_it_should_behave_like_to :it_has_behavior, 'has behavior:'
+  config.alias_it_should_behave_like_to(:it_has_behavior, 'has behavior:')
 
   config.order = :random
   Kernel.srand(config.seed)
