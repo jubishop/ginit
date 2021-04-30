@@ -80,3 +80,5 @@ contents = File.read(File.join(assets_dir, 'LICENSE.txt'))
 contents.gsub!('%year%', Time.now.year.to_s)
 File.write(File.join(Dir.pwd, 'LICENSE.txt'), contents)
 puts 'done.'
+
+puts "Remember you need the file lib/#{File.basename(Dir.pwd)}.rb".red.bold
