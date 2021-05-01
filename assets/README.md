@@ -6,16 +6,12 @@
 
 ## Installation
 
-### Global installation
-
-```zsh
-gem install %gem% --source https://www.jubigems.org/
-```
-
 ### In a Gemfile
 
 ```ruby
-gem '%gem%', source: 'https://www.jubigems.org/'
+source: 'https://www.jubigems.org/' do
+  gem '%gem%'
+end
 ```
 
 ## Usage
