@@ -6,13 +6,12 @@ Gem::Specification.new do |spec|
   spec.email         = ['jubishop@gmail.com']
   spec.homepage      = 'https://github.com/jubishop/%gem%'
   spec.license       = 'MIT'
-  spec.files         = Dir['lib/**/*.rb'] + Dir['sig/**/*.rbs']
+  spec.files         = Dir['lib/**/*.rb']
   spec.require_paths = ['lib']
   spec.bindir        = 'bin'
   spec.executables   = []
   spec.metadata      = {
-    'source_code_uri' => 'https://github.com/jubishop/%gem%',
-    'steep_types' => 'sig'
+    'source_code_uri' => 'https://github.com/jubishop/%gem%'
   }
   spec.required_ruby_version = Gem::Requirement.new('>= 3.0')
 end

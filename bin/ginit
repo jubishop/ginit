@@ -8,7 +8,7 @@ require 'rest-client'
 assets_dir = File.join(File.dirname(__FILE__), '../assets')
 
 print 'Adding stub dirs'
-FileUtils.mkdir_p(%w[bin lib sig spec .github/workflows])
+FileUtils.mkdir_p(%w[bin lib spec .github/workflows])
 puts 'done.'
 
 print 'Copying .gitignore...'
@@ -22,10 +22,6 @@ puts 'done.'
 print 'Copying spec/spec_helper.rb...'
 FileUtils.cp(File.join(assets_dir, 'spec_helper.rb'),
              File.join(Dir.pwd, 'spec'))
-puts 'done.'
-
-print 'Copying Steepfile...'
-FileUtils.cp(File.join(assets_dir, 'Steepfile'), Dir.pwd)
 puts 'done.'
 
 print 'Copying .rubocop.yml...'
@@ -45,15 +41,25 @@ FileUtils.cp(File.join(assets_dir, 'rubocop.yml'),
              File.join(Dir.pwd, '.github', 'workflows'))
 puts 'done.'
 
+print 'Copying lib file...'
+FileUtils.cp(
+    File.join(assets_dir, 'gem_lib.rb'),
+    File.join(File.join(Dir.pwd, 'lib', "#{File.basename(Dir.pwd)}.rb")))
+
 puts 'What is the summary for this gem?'.bold
 print ': '
 summary = gets.strip
 
 print 'Updating github repo with summary...'
-RestClient.patch("https://#{ENV['GITHUB_TOKEN']}@" \
-                 "api.github.com/repos/jubishop/#{File.basename(Dir.pwd)}",
-                 { description: summary }.to_json)
-puts 'done.'
+begin
+  RestClient.patch("https://#{ENV['GITHUB_TOKEN']}@" \
+                  "api.github.com/repos/jubishop/#{File.basename(Dir.pwd)}",
+                   { description: summary }.to_json)
+rescue StandardError
+  puts 'Failed to update github.'.red.bold
+else
+  puts 'done.'
+end
 
 print 'Installing gemspec...'
 contents = File.read(File.join(assets_dir, 'template._gemspec'))
@@ -80,5 +86,3 @@ contents = File.read(File.join(assets_dir, 'LICENSE.txt'))
 contents.gsub!('%year%', Time.now.year.to_s)
 File.write(File.join(Dir.pwd, 'LICENSE.txt'), contents)
 puts 'done.'
-
-puts "Remember you need the file lib/#{File.basename(Dir.pwd)}.rb".red.bold
