@@ -4,7 +4,7 @@ files = Dir.glob('assets/**/*', File::FNM_DOTMATCH).select { |path|
 
 Gem::Specification.new do |spec|
   spec.name          = 'ginit'
-  spec.version       = '1.19'
+  spec.version       = '1.20'
   spec.summary       = 'Installs opinionated scaffolding for a new Gem.'
   spec.authors       = ['Justin Bishop']
   spec.email         = ['jubishop@gmail.com']

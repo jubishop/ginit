@@ -1,10 +1,9 @@
 ruby '>= 3'
 
-# defaults
 group :development do
   source 'https://www.rubygems.org' do
     gem 'rake'
-    gem 'rbs'
+    gem 'rspec'
     gem 'rubocop'
     gem 'rubocop-performance'
     gem 'rubocop-rake'
